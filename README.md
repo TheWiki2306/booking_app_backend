@@ -9,7 +9,6 @@ Features include:
 - Distance between the origin location and the destination of item,
 
 Installation Guide:
-https://github.com/TheWiki2306/booking_app_backend.git
 
 1. Clone the repository:
     ``` bash
