@@ -9,15 +9,16 @@ Features include:
 - Distance between the origin location and the destination of item,
 
 Installation Guide:
+https://github.com/TheWiki2306/booking_app_backend.git
 
 1. Clone the repository:
     ``` bash
-    git clone https://github.com/username/repository-name.git
+    git clone https://github.com/TheWiki2306/booking_app_backend.git
     ```
 
 2. Navigate into the project directory:
     ```bash
-    cd repository-name
+    cd booking_app_backend
     ```
 
 3. Install dependencies:
@@ -29,10 +30,14 @@ Installation Guide:
     ```bash
     yarn install
     ```
+4. open editor(VS CODE):
+   ```bash
+   code .
+   ```
 
-## Usage
+Usage
 
-Describe how to use your project, including examples and code snippets.
+Note: Make sure to run before running the frontend.
 
 ```bash
 npm start
