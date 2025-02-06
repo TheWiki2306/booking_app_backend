@@ -1,6 +1,14 @@
 import axios from "axios";
+import dotenv from "dotenv";
 
-const API_KEY = '2f317aa3d7e542a292f6b76ba9f6bac1'
+
+dotenv.config();
+
+const API_KEY = process.env.API_KEY;
+
+console.log(API_KEY);
+console.log(process.env.PORT);
+
 
 export const geoLocation = async (location) => {
     const url = `https://api.opencagedata.com/geocode/v1/json?q=${encodeURIComponent(location)}&key=${API_KEY}`

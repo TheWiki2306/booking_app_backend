@@ -5,7 +5,9 @@ import bodyParser from "body-parser";
 import { router } from "./routes/pricing.js"; 
 import { errorHandler }  from "../src/middleware/errorHandler.js";
 
+
 const app = express();
+
 
 // Middleware
 app.use(cors());

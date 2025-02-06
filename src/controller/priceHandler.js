@@ -13,7 +13,6 @@ const pricingSchema = Joi.object({
 
 export const calculatePriceHandler = async (req, res) => {
     try {
-        // Validate input data
         const { error } = pricingSchema.validate(req.body);
         if (error) {
             return res.status(400).json({ error: error.details[0].message });
@@ -23,7 +22,6 @@ export const calculatePriceHandler = async (req, res) => {
         const originCoordinates = await geoLocation(origin);
         const destinationCoordinates = await geoLocation(destination);
 
-        // Handle possible geocoding errors
         if (!originCoordinates || !destinationCoordinates) {
             return res.status(400).json({ error: 'Invalid origin or destination' });
         }
@@ -31,11 +29,15 @@ export const calculatePriceHandler = async (req, res) => {
         const distance = calculateDistance(originCoordinates, destinationCoordinates);
         const price = calculatePrice(weight, distance, cargoType, priorityLevel);
 
-        res.status(200).json({ price, distance });
+        const formattedPrice = `$${price.toFixed(2)}`;
+        const formattedDistance = `${distance.toFixed(2)} km`;
+
+        res.status(200).json({ price: formattedPrice, distance: formattedDistance });
 
     } catch (error) {
         console.error(error);
         res.status(500).json({ error: 'Internal server error' });
     }
 };
+
 
